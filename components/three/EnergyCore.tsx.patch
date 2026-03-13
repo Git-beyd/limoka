@@ -1,0 +1,13 @@
+--- apps/site-vitrine/components/three/EnergyCore.tsx
++++ apps/site-vitrine/components/three/EnergyCore.tsx
+@@ -285,8 +285,8 @@
+       </mesh>
+ 
+       {/* Orbiting Entities - Interoperability */}
+-      {ENTITIES.map((entity, i) => (
+-        <OrbitingNode key={entity.label} entity={entity} coreRef={coreGroupRef} />
++      {ENTITIES.map((entity) => (
++        <OrbitingNode key={entity.label} entity={entity} coreRef={coreGroupRef as any} />
+       ))}
+ 
+       {/* Point lights */}
