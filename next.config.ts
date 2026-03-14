@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@react-three/fiber", "@react-three/drei"],
   },
+  output: 'standalone',
 };
 
 export default nextConfig;
