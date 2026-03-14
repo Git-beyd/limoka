@@ -1,5 +1,5 @@
 # Base image
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 WORKDIR /app
 
 # -----------------------------
@@ -27,9 +27,9 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 RUN corepack enable
-RUN pnpm install --frozen-lockfile || npm install
+RUN pnpm install --frozen-lockfile
 
-RUN npm run build
+RUN pnpm build
 
 # -----------------------------
 # Production image
